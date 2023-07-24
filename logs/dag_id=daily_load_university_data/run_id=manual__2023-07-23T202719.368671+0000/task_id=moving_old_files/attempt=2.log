@@ -1,0 +1,26 @@
+[2023-07-23T20:37:50.679+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_load_university_data.moving_old_files manual__2023-07-23T20:27:19.368671+00:00 [queued]>
+[2023-07-23T20:37:50.690+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_load_university_data.moving_old_files manual__2023-07-23T20:27:19.368671+00:00 [queued]>
+[2023-07-23T20:37:50.690+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-23T20:37:50.705+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): moving_old_files> on 2023-07-23 20:27:19.368671+00:00
+[2023-07-23T20:37:50.714+0000] {standard_task_runner.py:57} INFO - Started process 2497 to run task
+[2023-07-23T20:37:50.718+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'daily_load_university_data', 'moving_old_files', 'manual__2023-07-23T20:27:19.368671+00:00', '--job-id', '336', '--raw', '--subdir', 'DAGS_FOLDER/LoadInitiator.py', '--cfg-path', '/tmp/tmp9urmsos5']
+[2023-07-23T20:37:50.720+0000] {standard_task_runner.py:85} INFO - Job 336: Subtask moving_old_files
+[2023-07-23T20:37:50.771+0000] {task_command.py:410} INFO - Running <TaskInstance: daily_load_university_data.moving_old_files manual__2023-07-23T20:27:19.368671+00:00 [running]> on host 3906890fc071
+[2023-07-23T20:37:50.849+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_load_university_data' AIRFLOW_CTX_TASK_ID='moving_old_files' AIRFLOW_CTX_EXECUTION_DATE='2023-07-23T20:27:19.368671+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-23T20:27:19.368671+00:00'
+[2023-07-23T20:37:50.853+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-23T20:37:50.854+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/dags/MoveOldFilestoArchive.py']
+[2023-07-23T20:37:50.868+0000] {subprocess.py:86} INFO - Output:
+[2023-07-23T20:37:51.023+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-07-23T20:37:51.023+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/MoveOldFilestoArchive.py", line 13, in <module>
+[2023-07-23T20:37:51.024+0000] {subprocess.py:93} INFO -     allfiles_recieved = os.listdir(source_recieved)
+[2023-07-23T20:37:51.024+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: './data/RecievedData/'
+[2023-07-23T20:37:51.028+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-07-23T20:37:51.041+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-07-23T20:37:51.046+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=daily_load_university_data, task_id=moving_old_files, execution_date=20230723T202719, start_date=20230723T203750, end_date=20230723T203751
+[2023-07-23T20:37:51.063+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 336 for task moving_old_files (Bash command failed. The command returned a non-zero exit code 1.; 2497)
+[2023-07-23T20:37:51.090+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-23T20:37:51.107+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

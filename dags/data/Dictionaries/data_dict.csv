@@ -1,0 +1,15 @@
+Id,Field,Type,Start,End
+1,File Year,Character,1,8
+2,Student ID,Character,9,12
+3,Full Name,Character,13,32
+4,Date of Birth,Date,33,42
+5,Country,Character,43,44
+6,University,Character,45,65
+7,Subject Code,Character,66,69
+8,Result,Character,70,70
+9,2 repeats of fields 7-8 (for subjects 2 to 3),,71,80
+10,Status,Character,81,89
+11,Assesment Code,Character,91,94
+12,Assesment Name,Character,95,104
+13,Marks,Numeric,105,107
+14,3 repeats of fields 11-13 (for assesments 2 to 4),,108,141
