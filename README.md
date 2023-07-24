@@ -1,4 +1,5 @@
-# NABleETLTask
+# NAbleETLTask
+
 
 ######################################################################################################
 
@@ -9,12 +10,18 @@
 Overview :
 This is a poc for loading of university fixed width data file to db
 
+Assumptions and changes to sample files:
+  1. Minor change was done for studentid since both ids were same, in order for unqiene, made two ids unique.
+  2. Fixed width file had some differences in length interms of provided data_dict file, so added couple of spaces to to taly the columns with values.
 
 Tools used :
 DB : Posgres
 Pipeline tool : Airflow
 Scripting Language : Python
 Container : Docker
+
+Orchestration :
+  whole pipeline is created and orchestrated with Airflow. dag_id='daily_load_university_data'
 
 Sequance of The Load :
 1. Parse fixed width Uni data file with requested column set.
@@ -59,6 +66,3 @@ Spinnup Docker Environment :
 	1. Install docker, steps as follows https://docs.docker.com/desktop/install/windows-install/
 	2. Go into the project folder locate docker compose file
 	3. open cmd to the above location and run, "docker compose up -d"
-
-
-
