@@ -15,9 +15,9 @@ Assumptions and changes to sample files:
   2. Fixed width file had some differences in length interms of provided data_dict file, so added couple of spaces to taly the columns lengths with values.
 
 Tools used :
-DB : Posgres
-Pipeline tool : Airflow
-Scripting Language : Python
+DB : Posgres ,
+Pipeline tool : Airflow ,
+Scripting Language : Python ,
 Container : Docker
 
 Orchestration :
