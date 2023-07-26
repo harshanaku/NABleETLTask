@@ -59,8 +59,9 @@ Methods and checks for above steps :
 Python Libraries used : Pandas,Numpy,psycopg2,os,glob,shutil,datetime,airflow,logging
 	
 Database Design :
-		1. One raw table to hold all time recieved data. Act also as the dim table.
-		2. Two fact tables to store unique student details and university data.
+		1. two schemas, raw and dbo where dbo has fact tables and raw has dim table.
+		2. One raw table to hold all time recieved data. Act also as the dim table.
+		3. Two fact tables to store unique student details and university data.
 
 Spinnup Docker Environment :
 	1. Install docker, steps as follows https://docs.docker.com/desktop/install/windows-install/
