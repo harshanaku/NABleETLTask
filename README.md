@@ -11,8 +11,8 @@ Overview :
 This is a poc for loading of university fixed width data file to db
 
 Assumptions and changes to sample files:
-  1. Minor change was done for studentid since both ids were same, in order for unqiene, made two ids unique.
-  2. Fixed width file had some differences in length interms of provided data_dict file, so added couple of spaces to to taly the columns with values.
+  1. Minor change was done for studentid since both ids were same, in order to make it unque, changed one id.
+  2. Fixed width file had some differences in length interms of provided data_dict file, so added couple of spaces to taly the columns lengths with values.
 
 Tools used :
 DB : Posgres
